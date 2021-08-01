@@ -1,0 +1,14 @@
+
+Nguyên nhân do mã wt-l ở dòng 2829
+<div class='title-wrap bp-title'><h3 class='title'><data:blog.jumpLinkMessage/></h3><a class='wt-1' href='/search'><data:messages.viewAll/></a></div>
+
+Khắc phục, sửa thành wt-2
+
+Rổi tìm code CSS thêm bên dưới dòng này:
+
+.title-wrap > a.wt-l{font-size:12px;color:var(--meta-color);font-weight:400;line-height:1}
+.title-wrap > a.wt-l:hover{color:var(--main-color)}
+
+Code thêm
+.title-wrap > a.wt-2{font-size:12px;color:var(--meta-color);font-weight:400;line-height:1}
+.title-wrap > a.wt-2:hover{color:var(--main-color)}
