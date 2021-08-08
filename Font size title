@@ -1,0 +1,4 @@
+<Variable name="itempost.title.size" description="Post Page Title Font Size" type="length" default="37px" min="20px" max="50px" value="37px"/>
+
+Đổi thành 
+<Variable name="itempost.title.size" description="Post Page Title Font Size" type="length" default="31px" min="20px" max="50px" value="31px"/>
