@@ -1,0 +1,44 @@
+
+Search template từ khoá:
+
+<b:if cond='data:post.embedCommentForm'>
+
+sẽ thấy 3 dòng trong template thì dòng thứ 2 là nó:
+
+Nó đứng trước đoạn: 
+
+<b:include name='commentsTitle'/>
+      <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+        <b:class expr:name='data:post.numberOfComments != 0 ? &quot;has-comments&quot; : &quot;no-comments&quot;'/>
+        <b:if cond='data:post.allowNewComments'>
+          <b:if cond='data:this.messages.blogComment'><p class='comments-message excerpt'><data:this.messages.blogComment/></p></b:if>
+          <b:else/>
+          <b:if cond='data:post.noNewCommentsText and (data:post.numberOfComments == 0)'><p class='comments-message no-new-comments excerpt'><data:post.noNewCommentsText/><em>*</em></p></b:if>
+        </b:if>
+
+
+Thêm dòng này, ở code thứ 2872:
+
+<p class="comments-message excerpt">To be published, comments must be reviewed by the administrator.<em>*</em></p>
+
+
+Phía dưới của nó sẽ là: 
+
+<b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.numberOfComments != 0'>
+            <div class='comments-content'>
+              <div id='comment-holder'>
+                <data:post.commentHtml/>
+              </div>
+            </div>
+          </b:if>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          </b:if>
+
+
+Đối với những template khác, vị trí của chính xác nó như sau:
+
+<b:include name='commentsTitle'/>
+<p class='comments-message excerpt'>Vui lòng đăng nhập bằng tài khoản Google để gửi bình luận cho bài viết.<em>*</em></p>               
+          <b:if cond='data:post.numberOfComments != 0'>    
